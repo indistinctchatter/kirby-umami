@@ -1,23 +1,23 @@
 <?php
 
-Kirby::plugin('floriankarsten/plausible', [
+Kirby::plugin('indistinctchatter/umami', [
 	'areas' => [
-		'plausible' => function ($kirby) {
+		'umami' => function ($kirby) {
 			return [
 				'label' => 'Analytics',
 				'icon' => 'chart',
 				'disabled' => false,
 				'menu' => true,
-				'link' => 'plausible',
+				'link' => 'umami',
 				'views' => [
 					[
-						'pattern' => 'plausible',
+						'pattern' => 'umami',
 						'action'  => function () use ($kirby) {
 							return [
-								'component' => 'k-plausible-view',
+								'component' => 'k-umami-view',
 								'title' => 'Analytics',
 								'props' => [
-									'sharedLink' => option('floriankarsten.plausible.sharedLink')
+									'sharedLink' => option('indistinctchatter.umami.sharedLink')
 								],
 							];
 						}
@@ -27,6 +27,6 @@ Kirby::plugin('floriankarsten/plausible', [
 		}
 	],
 	'snippets' => [
-		'plausible' => __DIR__ . '/snippets/plausible.php'
+		'umami' => __DIR__ . '/snippets/umami.php'
 	]
 ]);
